@@ -9,7 +9,7 @@
 
 ![first](./screenshots/desk1.png)
 ![second](./screenshots/desk2.png)
-![third][./screenshots/desktop.png]
+![third](./screenshots/desktop.png)
 
 ## Directory Tree
 
