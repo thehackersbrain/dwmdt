@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# this is just an example!
+# add your autostart stuffs here
+
+# run bar script and dwm ( do not remove this )
+~/.config/dwm/scripts/./bar.sh &
