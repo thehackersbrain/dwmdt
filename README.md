@@ -68,8 +68,20 @@
 │   └── X11
 │       └── xorg.conf.d
 │           └── 20-amdgpu.conf
+├── local
+│   └── share
+│       └── fonts
+│           ├── materialdesignicons-webfont.ttf
+│           ├── materialdesignicons-webfont.woff
+│           ├── materialdesignicons-webfont.woff2
+│           ├── MaterialIcons-Regular.ttf
+│           └── Material.ttf
 ├── README.md
 ├── robbyrussell.zsh-theme
+├── screenshots
+│   ├── desk1.png
+│   ├── desk2.png
+│   └── desktop.png
 ├── wallpaper
 │   ├── city.jpg
 │   ├── wallpaper.jpg
@@ -77,5 +89,6 @@
 ├── xprofile
 └── zshrc
 
-14 directories, 47 files
+18 directories, 55 files
+
 ```
