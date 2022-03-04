@@ -1,14 +1,8 @@
-# Setting Resolution
-# xrandr --output Virtual1 --mode 1920x1080
-
 # Picom Configuration
 picom -CGb &
 
-# Setting Wallpaper
-# nitrogen --restore
-# feh --bg-fill $HOME/.config/wallpaper/wallpaper.jpg
+# Setting up Wallpaper
 feh --bg-fill $HOME/.config/wallpaper/city.jpg
 
-# dwmstatus 2>&1 >/dev/null &
-
+# Starting the autorun script for dwm bar
 bash $HOME/.config/dwm/scripts/./autostart
