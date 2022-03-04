@@ -1,0 +1,14 @@
+# Setting Resolution
+# xrandr --output Virtual1 --mode 1920x1080
+
+# Picom Configuration
+picom -CGb &
+
+# Setting Wallpaper
+# nitrogen --restore
+# feh --bg-fill $HOME/.config/wallpaper/wallpaper.jpg
+feh --bg-fill $HOME/.config/wallpaper/city.jpg
+
+# dwmstatus 2>&1 >/dev/null &
+
+bash $HOME/.config/dwm/scripts/./autostart
