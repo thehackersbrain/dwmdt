@@ -1,0 +1,14 @@
+dash
+imlib2
+xsetroot
+nerd-fonts-jetbrains-mono
+ttf-material-design-icons
+rofi
+brightnessctl
+pactl
+maim
+alacritty
+xclip
+dunst
+pacman-contrib
+yay
