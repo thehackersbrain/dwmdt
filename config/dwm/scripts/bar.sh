@@ -16,8 +16,8 @@ cpu() {
 }
 
 pkg_updates() {
-	updates=$(doas xbps-install -un | wc -l) # void
-	# updates=$(checkupdates | wc -l)   # arch , needs pacman contrib
+	# updates=$(doas xbps-install -un | wc -l) # void
+	updates=$(checkupdates | wc -l)   # arch , needs pacman contrib
 	# updates=$(aptitude search '~U' | wc -l)  # apt (ubuntu,debian etc)
 
 	if [ -z "$updates" ]; then
@@ -25,6 +25,12 @@ pkg_updates() {
 	else
 		printf "^c$green^  $updates"" updates"
 	fi
+}
+
+volume() {
+	# get_volume="$(pactl get-sink-volume @DEFAULT_SINK@ | cut -d ' ' -f5)"
+	get_volume="$(pactl get-sink-volume @DEFAULT_SINK@ | grep -oE '[0-9]+\%' | head -1)"
+	printf "^c$blue^ : $get_volume \%"
 }
 
 battery() {
@@ -59,5 +65,5 @@ while true; do
 	[ $interval = 0 ] || [ $(($interval % 3600)) = 0 ] && updates=$(pkg_updates)
 	interval=$((interval + 1))
 
-	sleep 1 && xsetroot -name "$updates $(battery) $(brightness) $(cpu) $(mem) $(wlan) $(clock)"
+	sleep 1 && xsetroot -name "$updates $(battery) $(brightness) $(volume) $(cpu) $(mem) $(wlan) $(clock)"
 done

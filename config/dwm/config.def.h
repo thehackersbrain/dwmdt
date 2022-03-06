@@ -137,14 +137,23 @@ static const char *xi[] = {"xbacklight", "-inc", "7", NULL};
 static const char *xd[] = {"xbacklight", "-dec", "7", NULL};
 static const char *bri[] = {"brightnessctl", "s", "10%+", NULL};
 static const char *brd[] = {"brightnessctl", "s", "10%-", NULL};
+// Volume Control Keys
+static const char *svi[] = {"pactl", "set-sink-volume", "@DEFAULT_SINK@", "+10%", NULL};
+static const char *svd[] = {"pactl", "set-sink-volume", "@DEFAULT_SINK@", "-10%", NULL};
+static const char *svm[] = {"pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL};
+static const char *svmm[] = {"pactl", "set-source-mute", "@DEFAULT_SOURCE@", "toggle", NULL};
 
 static Key keys[] = {
     /* modifier                     key        function        argument */
     { MODKEY,                       XK_c,      spawn,          {.v = rofi } },
     { MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-    { MODKEY|ShiftMask,             XK_Return, spawn,          {.v = term } },  
+    { MODKEY|ShiftMask,             XK_Return, spawn,          {.v = term } },
     { 0,                            XK_F2,     spawn,          {.v = brd } },
     { 0,                            XK_F3,     spawn,          {.v = bri } },
+    { 0,                            XK_F6,     spawn,          {.v = svm} },
+    { 0,                            XK_F7,     spawn,          {.v = svd} },
+    { 0,                            XK_F8,     spawn,          {.v = svi} },
+    { 0,                            XK_F9,     spawn,          {.v = svmm} },
     // { MODKEY,                       XK_Return, spawn,          SHCMD("st_pad && st")},  
     { MODKEY|ControlMask,           XK_u,      spawn,          SHCMD("maim | xclip -selection clipboard -t image/png") },
     { MODKEY,                       XK_u,      spawn,          SHCMD("maim --select | xclip -selection clipboard -t image/png") },
